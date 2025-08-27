@@ -31,9 +31,37 @@
   font-size: 24px; /* 元が16px → 1.5倍で24px */
 }
 
-select, input, button {
+input, button {
   font-size: 21px; /* 元が14px → 1.5倍で21px */
 }
+
+.select-wrapper {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.select-wrapper select {
+  width: 100%;
+  padding: 10px 40px 10px 12px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  appearance: none;
+  background-color: #fff;
+}
+
+.select-wrapper::after {
+  content: '▼';
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: #888;
+  font-size: 0.8rem;
+}
+
 </style>
 </head>
 
@@ -59,13 +87,15 @@ select, input, button {
   </script>
   <div class="panel point-gift">
     <h3>ポイントを贈る</h3>
-    <select id="recipient">
-      <option value="">贈与先を選択</option>
-      <option value="tanaka">マナン さん</option>
-      <option value="yamada">きたみな さん</option>
-      <option value="yamada">キムタク さん</option>
-      <option value="yamada">ふじ さん</option>
-    </select>
+    <div class="select-wrapper">
+        <select id="recipient">
+            <option value="">贈与先を選択</option>
+            <option value="manan">マナン さん</option>
+            <option value="kitamin">きたみな さん</option>
+            <option value="kimutaku">キムタク さん</option>
+            <option value="fuji">ふじ さん</option>
+        </select>
+    </div>
     <input type="number" id="pointAmount" placeholder="ポイント数" />
     <button onclick="sendPoint()">贈る</button>
   </div>
