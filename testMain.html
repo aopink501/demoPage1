@@ -14,8 +14,10 @@
       if (liff.isLoggedIn()) {
         const profile = await liff.getProfile();
         document.getElementById("profile").innerHTML = `
+        <div class="panel user-info">
           <p>こんにちは、 ${profile.displayName}　さん</p>
           <img src="${profile.pictureUrl}" width="100">
+        </div>
         `;
       } else {
         liff.login();
