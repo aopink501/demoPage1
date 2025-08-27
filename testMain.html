@@ -38,6 +38,12 @@ input, button {
   font-size: 1.3rem; 
 }
 
+.input-wrapper{
+    font-size: 1.3rem; 
+    position: relative;
+    display: inline-block;
+}
+
 .select-wrapper {
   position: relative;
   display: inline-block;
@@ -87,7 +93,7 @@ input, button {
             <option value="fuji">ふじ さん</option>
         </select>
     </div>
-    <input type="number" id="pointAmount" placeholder="ポイント数" />
+    <input type="number" id="pointAmount" class="input-wrapper" placeholder="ポイント数" />
     <button onclick="sendPoint()">贈る</button>
   </div>
   <div class="panel history">
