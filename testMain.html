@@ -53,18 +53,6 @@ input, button {
   appearance: none;
   background-color: #fff;
 }
-
-.select-wrapper::after {
-  content: '▼';
-  position: absolute;
-  right: 12px;
-  top: 25%;
-  transform: translateY(-25%);
-  pointer-events: none;
-  color: #888;
-  font-size: 0.8rem;
-}
-
 </style>
 </head>
 
@@ -90,7 +78,7 @@ input, button {
   </script>
   <div class="panel point-gift">
     <h3>ポイントを贈る</h3>
-    <div class="select-wrapper form-control">
+    <div class="select-wrapper">
         <select id="recipient">
             <option value="">贈与先を選択</option>
             <option value="manan">マナン さん</option>
