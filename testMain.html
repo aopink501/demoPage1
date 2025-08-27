@@ -4,7 +4,17 @@
   <meta charset="UTF-8">
   <title>LIFF Demo</title>
   <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
+  <style>
+    .panel {
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 16px;
+        margin-bottom: 20px;
+        background-color: #f9f9f9;
+    }
+</style>
 </head>
+
 <body>
   <h1>LINEミニアプリデモ</h1>
   <div id="profile"></div>
@@ -25,5 +35,22 @@
     }
     main();
   </script>
+  <div class="panel point-gift">
+    <h3>🎁 ポイントを贈る</h3>
+    <select id="recipient">
+      <option value="">贈与先を選択</option>
+      <option value="tanaka">田中さん</option>
+      <option value="yamada">山田さん</option>
+    </select>
+    <input type="number" id="pointAmount" placeholder="ポイント数" />
+    <button onclick="sendPoint()">贈る</button>
+  </div>
+  <div class="panel history">
+    <h3>📜 最近の贈与履歴</h3>
+    <ul id="historyList">
+      <li>あなた → 田中さん：5pt（8/27）</li>
+      <li>あなた → 山本さん：3pt（8/26）</li>
+    </ul>
+  </div>
 </body>
 </html>
